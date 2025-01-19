@@ -22,3 +22,9 @@ class Product(models.Model):
     slug = models.SlugField(max_length=255)
 
     # image = models.ImageField(upload_to="image/", height_field=None, width_field=None, max_length=None)
+
+    class Meta:
+        verbose_name_plural = 'products'
+
+    def __str__(self):
+        return self.name
