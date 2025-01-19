@@ -20,3 +20,5 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
 
     slug = models.SlugField(max_length=255)
+
+    # image = models.ImageField(upload_to="image/", height_field=None, width_field=None, max_length=None)
