@@ -5,26 +5,30 @@
 <main>
     <div class="album py-5 bg-light">
         <div class="container">
-            <div class="pd-3 h5">{{ category.name }}</div>
+            <div class="pd-3 h5">{{ category.name | capfirst }}</div>
             <hr>
             <br>
             <div class="row row-cols-1 row-cols-md-5 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img class="img-fluid" src="" alt="Responsive image">
 
-                        <div class="card-body">
-                            <p class="card-text">
-                                <a class="text-info text-decoration-none" href=""></a>
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5></h5>
+                {% for product in products %}           
+                
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img class="img-fluid" src="" alt="Responsive image">
+
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <a class="text-info text-decoration-none" href=""></a>
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5></h5>
+                                </div>
+
                             </div>
 
                         </div>
-
                     </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
