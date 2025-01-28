@@ -9,5 +9,5 @@ urlpatterns = [
     path('register/', views.store, name="register"),
     path('my_login/', views.store, name="my-login"),
     path('product/<slug:slug>/', views.product_info, name="product-info"),
-    path('search/<slug:slug>/', views.list_category, name="list-category"),
+    path('search/<slug:category_slug>/', views.list_category, name="list-category"),
 ]
