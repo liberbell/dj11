@@ -19,3 +19,6 @@ def product_info(request, slug):
     context = {'product': product}
 
     return render(request, "store/product_info.html", context)
+
+def list_category(request, category):
+    category = get_object_or_404(Category, slug)
