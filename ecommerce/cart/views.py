@@ -5,7 +5,7 @@ def cart_summary(request):
 
     pass
 
-def cart_update(request):
+def cart_add(request):
 
     pass
 
