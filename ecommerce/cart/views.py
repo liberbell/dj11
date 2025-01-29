@@ -5,3 +5,14 @@ def cart_summary(request):
 
     pass
 
+def cart_update(request):
+
+    pass
+
+def cart_delete(request):
+
+    pass
+
+def cart_update(request):
+
+    pass
