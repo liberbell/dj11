@@ -6,6 +6,6 @@ class Cart():
         cart = self.session.get("session_key")
 
         if "session_key" not in request.session:
-            cart = self.session["session_key"] = {}
+            cart = self.session["session_key"] = {"fav_number": 13}
 
         self.cart = cart
