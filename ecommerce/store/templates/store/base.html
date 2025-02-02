@@ -66,11 +66,11 @@
 
                     <li class="nav-item">
                         <a type="button" role="button" href="{% url 'cart-summary' %}" class="btn btn-outline-secondary"> 
-                            {% comment %} <i class="fa-solid fa-cart-shopping" aria-hidden="true"> </i> {% endcomment %}
-                            <i class="fa-solid fa-cart-shopping"></i>
+
+                            <i class="fa fa-shopping-cart"></i>
 
                             &nbsp;
-
+{% comment %} 
                             <div id="cart-qty" class="d-inline-flex">
                                 {% with qty_amount=cart|length %}    
                                     {% if qty_amount > 0 %}
@@ -80,7 +80,7 @@
                                     {% endif %}
                                 {% endwith %}
 
-                            </div>
+                            </div> {% endcomment %}
                         </a>
                     </li>
                     &nbsp; &nbsp; &nbsp;
