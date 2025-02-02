@@ -51,7 +51,7 @@
         e.priventDefault();
         $.ajax({
             type: "POST",
-            url: "{{ url 'cart-add' }}",
+            url: "{% url 'cart-add' %}",
         });
     })
 </script>
