@@ -17,6 +17,8 @@ def cart_add(request):
 
         product = get_object_or_404(Product, id=product_id)
 
+        cart.add(product=product, product_quantity=product_quantity)
+
 def cart_delete(request):
 
     pass
