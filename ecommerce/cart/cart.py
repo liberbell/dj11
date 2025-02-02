@@ -9,3 +9,7 @@ class Cart():
             cart = self.session["session_key"] = {}
 
         self.cart = cart
+
+    def add(self, product, prodcut_qty):
+        product_id = product.id
+        
