@@ -49,6 +49,10 @@
 <script>
     $(document).on('click', '#add-button', function (e) {
         e.priventDefault();
+        $.ajax({
+            type: "POST",
+            url: "{{ url 'cart-add' }}",
+        });
     })
 </script>
 {% endblock content %}
