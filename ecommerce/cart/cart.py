@@ -11,5 +11,12 @@ class Cart():
         self.cart = cart
 
     def add(self, product, prodcut_qty):
-        product_id = product.id
+        product_id = str(product.id)
         
+        if product_id in self.cart:
+            self.cart[product_id]["qty"] = prodcut_qty
+            
+        else:
+            self.cart[product_id] = {"price": str(product.price), "qty": prodcut_qty}
+
+        self.session.modified = True
