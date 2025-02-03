@@ -50,7 +50,7 @@
     $(document).on('click', '#add-button', function(e) {
         e.preventDefault();
         $.ajax({
-            type: "POST",
+            type: 'POST',
             url: "{% url 'cart-add' %}",
             data: {
                 product_id: $('#add-button').val(),
