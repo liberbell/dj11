@@ -48,7 +48,7 @@
 </div>
 <script>
     $(document).on('click', '#add-button', function (e) {
-        e.priventDefault();
+        e.preventDefault();
         $.ajax({
             type: "POST",
             url: "{% url 'cart-add' %}",
