@@ -13,7 +13,7 @@ def cart_summary(request):
 def cart_add(request):
 
     cart=Cart(request)
-    if request.POST.get("action") == "POST":
+    if request.POST.get('action') == 'post':
         product_id = int(request.POST.get("product_id"))
         product_quantity = int(request.POST.get("product_quantity"))
 
