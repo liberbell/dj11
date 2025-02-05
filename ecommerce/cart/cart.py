@@ -33,3 +33,6 @@ class Cart():
 
         for product in products:
             cart[str(product.id)]["product"] = product
+
+        for item in cart.values():
+            
