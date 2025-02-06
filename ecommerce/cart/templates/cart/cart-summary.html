@@ -14,8 +14,8 @@
                         <img class="img-fluid mx-auto d-block" width="200px" src="{{ product.image.url}}" alt="Responsive image">
                     </div>
                     <div class="col-md-9 col-lg-10 ps-md-3 ps-lg-10">
-                        <a href="{{ product.get_absolute_url }}" class="text-info">
-                            <h1 class="h5 pt-2">{{ product.title }}</h1>
+                        <a href="{{ product.get_absolute_url }}" class="text-info text-decoration-none">
+                            <h1 class="h5 pt-2">{{ product.title | capfirst }}</h1>
                         </a>
                         <div class="border">
                             <div class="col border-bottom">
@@ -59,5 +59,7 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
 </main>
 {% endblock content %}
