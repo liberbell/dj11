@@ -40,4 +40,4 @@ class Cart():
             yield item
 
     def get_total(self):
-        return sum(Decimal(item["item"]*item["qty"] for item in self.cart.values()))
+        return sum(Decimal(item["price"]) * item["qty"] for item in self.cart.values())
