@@ -68,9 +68,9 @@
         e.preventDefault();
         $.ajax({
             type: 'POST',
-            url: '{% url "cart-add" %}',
+            url: '{% url "cart-delete" %}',
             data: {
-                product_id: $('#add-button').val(),
+                product_id: $(this).data('index'),
                 product_quantity: $('#select option:selected').text(),
                 csrfmiddlewaretoken: "{{ csrf_token }}",
                 action: 'post',
