@@ -86,5 +86,32 @@
             },
         });
     })
+
+    $(document).on('click', '.update-button', function(e) {
+        e.preventDefault();
+        var theproductid = $(this).data('index');
+
+        $.ajax({
+            type: 'POST',
+            url: '{% url "cart-update" %}',
+            data: {
+                product_id: $(this).data('index'),
+                csrfmiddlewaretoken: "{{ csrf_token }}",
+                action: 'post',
+            },
+            success: function(json) {
+                // console.log(json)
+                location.reload();
+                document.getElementById('cart-qty').textContent = json.qty
+                document.getElementById('total').textContent = json.total
+                
+            },
+            error: function(xhr, errmsg, err) {
+                
+            },
+        });
+    })
+
+
 </script>
 {% endblock content %}
