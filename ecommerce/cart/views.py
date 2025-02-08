@@ -35,6 +35,7 @@ def cart_delete(request):
 
         cart.delete(product=product_id)
         cart_quantity = cart.__len__()
+        cart_total = cart.get_total()
     
 
 def cart_update(request):
