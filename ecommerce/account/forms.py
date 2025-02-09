@@ -15,4 +15,7 @@ class CreateUserForm(UserCreationForm):
         email = self.cleaned_data("email")
 
         if User.objects.filter(email=email).exists():
-            raise forms.ValidationError()
+            raise forms.ValidationError("This email already exits.")
+        
+        if len(email >= 350):
+            raise forms.ValidationError("This email is too long.")
