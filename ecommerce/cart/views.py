@@ -50,3 +50,6 @@ def cart_update(request):
         product_quantity = int(request.POST.get("product_quantity"))
 
         cart.update(product=product_id, qty=product_quantity)
+
+        cart_quantity = cart.__len__()
+        cart_total = cart.get_total()
