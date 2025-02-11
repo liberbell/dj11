@@ -43,9 +43,10 @@ INSTALLED_APPS = [
     'account',
     'mathfilters',
     'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap 5'
+CRISPY_TEMPLATE_PACK = 'Bootstrap 5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
