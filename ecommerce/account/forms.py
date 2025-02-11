@@ -11,6 +11,8 @@ class CreateUserForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(CreateUserForm, self).__init__(*args, **kwargs)
 
+        self.fields["email"].required = True
+
     def clean_email(self):
         email = self.cleaned_data.get("email")
 
