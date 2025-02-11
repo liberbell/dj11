@@ -11,8 +11,8 @@
         <br>
         <form autocomplete="off" method="post">
             {% csrf_token %}
-            Username: {{ form.username }}
-            Email: {{ form.email }}
+            {{ form }}
+            <button type="submit" class="btn btn-secondary btn-lg w-100 btn-block"></button>
         </form>
     </div>
 </body>
