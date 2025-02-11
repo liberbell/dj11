@@ -1,7 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import CreateUserForm
-from django.shortcuts import redirect
-
 
 # Create your views here.
 def register(request):
@@ -12,7 +10,7 @@ def register(request):
         if form.is_valid():
             form.save()
 
-            return redirect("")
+            return redirect("store")
         
     context = {"form": form}
 
