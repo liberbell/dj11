@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import CreateUserForm
+from django.contrib.sites.shortcuts import get_current_site
+from .token import UserVerificationTokenGenerate
 
 # Create your views here.
 def register(request):
