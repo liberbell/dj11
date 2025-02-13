@@ -17,8 +17,9 @@ def register(request):
 
             user = form.save()
             user.is_active = False
+            user.save()
 
-            return redirect("store")
+            return redirect("email-verification-sent")
         
     context = {"form": form}
 
