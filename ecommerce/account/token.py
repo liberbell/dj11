@@ -9,3 +9,6 @@ class UserVerificationTokenGenerator(PasswordResetTokenGenerator):
         is_active = six.text_type(user.is_active)
 
         return f"{user_id}{ts}{is_active}"
+    
+
+UserVerificationTokenGenerate = UserVerificationTokenGenerator()
