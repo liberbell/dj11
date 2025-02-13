@@ -3,6 +3,10 @@ from .forms import CreateUserForm
 from django.contrib.sites.shortcuts import get_current_site
 from .token import UserVerificationTokenGenerate
 
+from django.template.loader import render_to_string
+from django.utils.encoding import force_bytes, force_str
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+
 # Create your views here.
 def register(request):
     form = CreateUserForm()
@@ -10,7 +14,9 @@ def register(request):
     if request.method == "POST":
         form = CreateUserForm(request.POST)
         if form.is_valid():
-            form.save()
+
+            user = form.save()
+            user.is_active = False
 
             return redirect("store")
         
