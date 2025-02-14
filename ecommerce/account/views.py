@@ -21,6 +21,11 @@ def register(request):
 
             current_site = get_current_site(request)
             subject = "Account verification email"
+            
+            render_to_string("account/registration/email_verification.html", {
+                'user': user,
+                'domain': current_site,
+            })
 
             return redirect("email-verification-sent")
         
