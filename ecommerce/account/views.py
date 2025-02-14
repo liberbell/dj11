@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import CreateUserForm
 from django.contrib.sites.shortcuts import get_current_site
-from .token import UserVerificationTokenGenerate
+from .token import user_tokenizer_generate
 
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
@@ -24,7 +24,9 @@ def register(request):
             
             render_to_string("account/registration/email_verification.html", {
                 'user': user,
-                'domain': current_site,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': user_tokenizer_generate.make_token(user),
             })
 
             return redirect("email-verification-sent")
