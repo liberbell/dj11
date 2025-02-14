@@ -19,6 +19,9 @@ def register(request):
             user.is_active = False
             user.save()
 
+            current_site = get_current_site(request)
+            subject = "Account verification email"
+
             return redirect("email-verification-sent")
         
     context = {"form": form}
