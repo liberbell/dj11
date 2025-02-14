@@ -11,4 +11,4 @@ class UserVerificationTokenGenerator(PasswordResetTokenGenerator):
         return f"{user_id}{ts}{is_active}"
     
 
-UserVerificationTokenGenerate = UserVerificationTokenGenerator()
+user_tokenizer_generate = UserVerificationTokenGenerator()
