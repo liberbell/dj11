@@ -47,6 +47,9 @@ def email_verification(request, uidb64, token):
         user.save()
 
         return redirect("email-verification-success")
+    
+    else:
+        return redirect("email-verification-failed")
 
 def email_verification_sent(request):
 
