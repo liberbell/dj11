@@ -36,9 +36,9 @@ def register(request):
 
     return render(request, "account/registration/register.html", context=context)
 
-def email_verification(request):
+def email_verification(request, uidb64, token):
 
-    pass
+    uid = force_str(urlsafe_base64_decode(uidb64))
 
 def email_verification_sent(request):
 
