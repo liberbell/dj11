@@ -2,6 +2,9 @@
 {% autoescape off %}
   Hi, Thank you registring on our website.
   Please be so kind as to verify your email.
+  Click the link below 
+
+  http://{{ domain }}{{% url "email-verification" %}}
 {% autoescape %}
 
 {% block content %}
