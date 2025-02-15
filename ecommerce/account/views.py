@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import CreateUserForm
 from django.contrib.sites.shortcuts import get_current_site
 from .token import user_tokenizer_generate
+from django.contrib.auth.models import User
 
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
@@ -39,6 +40,7 @@ def register(request):
 def email_verification(request, uidb64, token):
 
     uid = force_str(urlsafe_base64_decode(uidb64))
+    user = User.objects.get(pk=id)
 
 def email_verification_sent(request):
 
