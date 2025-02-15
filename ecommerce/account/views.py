@@ -42,6 +42,12 @@ def email_verification(request, uidb64, token):
     uid = force_str(urlsafe_base64_decode(uidb64))
     user = User.objects.get(pk=id)
 
+    if user and user_tokenizer_generate.check_token(user, token):
+        user.is_active = True
+        user.save()
+
+        return redirect("email-verification-success")
+
 def email_verification_sent(request):
 
     pass
