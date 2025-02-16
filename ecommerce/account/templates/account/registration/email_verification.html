@@ -4,7 +4,7 @@
   Please be so kind as to verify your email.
   Click the link below 
 
-  http://{{ domain }}{{% url "email-verification" uidb64=uid token=token %}}
+  http://{{ domain }}{% url "email-verification" uidb64=uid token=token %}
 {% autoescape %}
 
 {% block content %}
