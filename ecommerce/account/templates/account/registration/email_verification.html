@@ -1,4 +1,3 @@
-{% extends "store/base.html" %}
 {% autoescape off %}
   Hi, Thank you registring on our website.
   Please be so kind as to verify your email.
@@ -6,7 +5,3 @@
 
   http://{{ domain }}{% url "email-verification" uidb64=uid token=token %}
 {% endautoescape %}
-
-{% block content %}
-
-{% endblock content %}
