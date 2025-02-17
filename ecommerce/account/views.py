@@ -3,6 +3,9 @@ from .forms import CreateUserForm, LoginForm
 from django.contrib.sites.shortcuts import get_current_site
 from .token import user_tokenizer_generate
 from django.contrib.auth.models import User
+from django.contrib.auth.models import auth
+from django.contrib.auth import authenticate, login, logout
+
 
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
