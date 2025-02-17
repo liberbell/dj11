@@ -68,4 +68,6 @@ def email_verification_failed(request):
 
 def my_login(request):
 
-    pass
+    form = LoginForm()
+    if request.method == 'POST':
+        form = LoginForm(request, data=request.POST)
