@@ -82,3 +82,5 @@ def my_login(request):
                 auth.login(request, user)
 
                 return redirect("my-login")
+            
+    context = {"form": form}
