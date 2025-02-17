@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import CreateUserForm
+from .forms import CreateUserForm, LoginForm
 from django.contrib.sites.shortcuts import get_current_site
 from .token import user_tokenizer_generate
 from django.contrib.auth.models import User
@@ -62,3 +62,7 @@ def email_verification_success(request):
 def email_verification_failed(request):
 
     return render(request, "account/registration/email_verification_failed.html")
+
+def my_login(request):
+
+    pass
