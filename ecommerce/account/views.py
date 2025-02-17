@@ -77,3 +77,8 @@ def my_login(request):
             password = request.POST.get("password")
 
             user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                auth.login(request, user)
+
+                return redirect("my-login")
