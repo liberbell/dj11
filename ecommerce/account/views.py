@@ -85,4 +85,4 @@ def my_login(request):
             
     context = {"form": form}
 
-    return render(request, "account/my_login.html", context=ContextPopException)
+    return render(request, "account/my_login.html", context=context)
