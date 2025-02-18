@@ -81,7 +81,7 @@ def my_login(request):
             if user is not None:
                 auth.login(request, user)
 
-                return redirect("my-login")
+                return redirect("dashboard")
             
     context = {"form": form}
 
