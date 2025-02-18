@@ -89,4 +89,4 @@ def my_login(request):
 
 def dashboard(request):
 
-    pass
+    return render(request, "dashboard.html")
