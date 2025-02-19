@@ -93,7 +93,7 @@ def user_logout(request):
     auth.logout(request)
 
     return redirect("store")
-@login_required
+@login_required(login_url="account/my-login")
 def dashboard(request):
 
     return render(request, "account/dashboard.html")
