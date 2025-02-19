@@ -5,6 +5,7 @@ from .token import user_tokenizer_generate
 from django.contrib.auth.models import User
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 
 from django.template.loader import render_to_string
@@ -92,7 +93,7 @@ def user_logout(request):
     auth.logout(request)
 
     return redirect("store")
-
+@login_required
 def dashboard(request):
 
     return render(request, "account/dashboard.html")
