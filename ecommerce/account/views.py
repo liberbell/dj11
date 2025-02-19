@@ -91,7 +91,7 @@ def user_logout(request):
 
     auth.logout(request)
 
-    return redirect("my-login")
+    return redirect("store")
 
 def dashboard(request):
 
