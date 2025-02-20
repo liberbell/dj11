@@ -15,8 +15,6 @@
     <p>This is your dashboard where you can perform any of the following:</p>
     <li>Track your orders</li>
     <li>Manage your account</li>
-
-    <a class="btn btn-alert navbar-btn" type="button"  href="{% url 'user-logout' %}"> Log out </a>
 </div>
 <br>
 <div class="container bg-white shadow-md p-5 form-layout">
@@ -25,5 +23,9 @@
 <br>
 <div class="container bg-white shadow-md p-5 form-layout">
     <h4>Manage your account</h4>
+    <hr>
+    <a class="btn btn-primary navbar-btn text-white" type="button"  href="{% url 'user-logout' %}"> Profile Management </a>
+    <br><br>
+    <a class="btn btn-primary navbar-btn text-white" type="button"  href="{% url 'user-logout' %}"> Log out </a>
 </div>
 {% endblock content %}
