@@ -97,3 +97,11 @@ def user_logout(request):
 def dashboard(request):
 
     return render(request, "account/dashboard.html")
+
+@login_required(login_url="my-login")
+def profile_management(request):
+    pass
+
+@login_required(login_url="my-login")
+def delete_account(request):
+    pass
