@@ -107,7 +107,10 @@ def profile_management(request):
             user_form.save()
             return redirect("dashboard")
         
-    return render(request, "account/profile_management.html")
+    user_form = UpdateUserForm(instance=request.user)
+    context = {"user_form": user_form}
+        
+    return render(request, "account/profile_management.html", context=context)
 
 @login_required(login_url="my-login")
 def delete_account(request):
