@@ -100,8 +100,9 @@ def dashboard(request):
 
 @login_required(login_url="my-login")
 def profile_management(request):
-    pass
+    return render(request, "account/profile_management.html")
 
 @login_required(login_url="my-login")
 def delete_account(request):
-    pass
+    
+    return render(request, "account/delete_account.html")
