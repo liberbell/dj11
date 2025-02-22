@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import CreateUserForm, LoginForm
+from .forms import CreateUserForm, LoginForm, UpdateUserForm
 from django.contrib.sites.shortcuts import get_current_site
 from .token import user_tokenizer_generate
 from django.contrib.auth.models import User
@@ -100,6 +100,13 @@ def dashboard(request):
 
 @login_required(login_url="my-login")
 def profile_management(request):
+
+    if request.POST == "POST":
+        user_form = UpdateUserForm(request.POST, instance=request.user)
+        if user_form.is_valid():
+            user_form.save()
+            return redirect("dashboard")
+        
     return render(request, "account/profile_management.html")
 
 @login_required(login_url="my-login")
