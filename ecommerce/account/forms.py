@@ -30,3 +30,11 @@ class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=TextInput())
     password = forms.CharField(widget=PasswordInput())
     
+class UpdateUserForm(forms.ModelForm):
+    
+    password = None
+
+    class Meta:
+        
+        model = User
+        fields = ["username", "email"]
