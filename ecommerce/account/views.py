@@ -101,7 +101,7 @@ def dashboard(request):
 @login_required(login_url="my-login")
 def profile_management(request):
 
-    if request.POST == "POST":
+    if request.method == "POST":
         user_form = UpdateUserForm(request.POST, instance=request.user)
         if user_form.is_valid():
             user_form.save()
