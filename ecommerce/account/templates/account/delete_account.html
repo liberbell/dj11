@@ -8,5 +8,23 @@
         background-color: gray;
     }
 </style>
-<h1>Delete account</h1>
+<body>
+    <br>
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h3>Delete your account</h3>
+        <br>
+        <br>
+        <form autocomplete="off" method="post">
+            {% csrf_token %}
+
+            <p>Are you sure to delete your Account?</p>
+
+            <br><br>
+            <button type="submit" class="btn btn-secondary btn-lg w-100 btn-block p-2"> &nbsp; Delete Acount </button>
+            <br><br>
+            <a href="{% url "dashboard" %}" class="btn btn-secondary btn-lg w-100 btn-block p-2"> Cancel</a>
+            
+        </form>
+    </div>
+</body>
 {% endblock content %}
