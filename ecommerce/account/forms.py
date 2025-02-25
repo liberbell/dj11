@@ -48,8 +48,8 @@ class UpdateUserForm(forms.ModelForm):
     def clean_email(self):
         email = self.cleaned_data.get("email")
 
-        if User.objects.filter(email=email).exclude(pk=self.instance.pk):
-            raise forms.ValidationError("This email already exits.")
+        if User.objects.filter(email=email).exclude(pk=self.instance.pk).exists():
+            raise forms.ValidationError("This email is invalid.")
         
         if len(email) >= 350:
             raise forms.ValidationError("This email is too long.")
