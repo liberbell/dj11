@@ -101,7 +101,7 @@ def user_logout(request):
     except KeyError:
         pass
 
-    messages.success("Logout successfully.")
+    messages.success(request, "Logout successfully.")
 
     # auth.logout(request)
 
