@@ -91,7 +91,7 @@ def my_login(request):
 def user_logout(request):
 
     try:
-        for key in list(request.session_keys()):
+        for key in list(request.session.keys()):
             if key == "seession_key":
                 continue
             else:
