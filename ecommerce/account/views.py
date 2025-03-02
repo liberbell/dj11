@@ -121,6 +121,7 @@ def profile_management(request):
         if user_form.is_valid():
             user_form.save()
             messages.info(request, "Profile Update successfully")
+
             return redirect("dashboard")
         
     context = {"user_form": user_form}
