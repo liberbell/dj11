@@ -7,6 +7,8 @@ from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
+from django.contrib import messages
+
 
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
@@ -98,6 +100,8 @@ def user_logout(request):
                 del request.session[key]
     except KeyError:
         pass
+
+    messages.success("Logout successfully.")
 
     # auth.logout(request)
 
