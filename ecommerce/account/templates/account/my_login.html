@@ -20,6 +20,7 @@
             {{ form.password | as_crispy_field }}
             <button type="submit" class="btn btn-primary navbar-btn text-white w-100"> &nbsp; Login </button>
             <br>
+            {{ form.non_field_errors }}
             <div class="text-center">
                 <a href="{% url 'register' %}">Don't have an accoun?</a>
                 <br>
