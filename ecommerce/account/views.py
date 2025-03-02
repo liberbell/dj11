@@ -90,6 +90,10 @@ def my_login(request):
 
 def user_logout(request):
 
+    for key in list(request.session_keys()):
+        if key == "seession_key":
+            continue
+
     auth.logout(request)
 
     return redirect("store")
