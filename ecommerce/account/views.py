@@ -90,9 +90,14 @@ def my_login(request):
 
 def user_logout(request):
 
-    for key in list(request.session_keys()):
-        if key == "seession_key":
-            continue
+    try:
+        for key in list(request.session_keys()):
+            if key == "seession_key":
+                continue
+            else:
+                del request.session[key]
+    except KeyError:
+        pass
 
     auth.logout(request)
 
