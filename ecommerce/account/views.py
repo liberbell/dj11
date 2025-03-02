@@ -133,7 +133,7 @@ def delete_account(request):
     if request.method == "POST":
         user.delete()
 
-        messages.success(request, "Account deleted successfully")
+        messages.error(request, "Account deleted successfully")
 
         return redirect("store")
     
