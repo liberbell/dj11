@@ -92,7 +92,7 @@ def user_logout(request):
 
     try:
         for key in list(request.session.keys()):
-            if key == "seession_key":
+            if key == "session_key":
                 continue
             else:
                 del request.session[key]
