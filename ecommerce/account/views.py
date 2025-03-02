@@ -99,7 +99,7 @@ def user_logout(request):
     except KeyError:
         pass
 
-    auth.logout(request)
+    # auth.logout(request)
 
     return redirect("store")
 @login_required(login_url="my-login")
