@@ -12,4 +12,4 @@ class ShippingAddress(models.Model):
     state = models.CharField(max_length=255, null=True, blank=True)
     zipcode = models.CharField(max_length=50, null=True, blank=True)
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
