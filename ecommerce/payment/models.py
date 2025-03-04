@@ -11,3 +11,5 @@ class ShippingAddress(models.Model):
     city = models.CharField(max_length=255)
     state = models.CharField(max_length=255, null=True, blank=True)
     zipcode = models.CharField(max_length=50, null=True, blank=True)
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
