@@ -10,3 +10,4 @@ class ShippingAddress(models.Model):
     address2 = models.CharField(max_length=1024)
     city = models.CharField(max_length=255)
     state = models.CharField(max_length=255, null=True, blank=True)
+    zipcode = models.CharField(max_length=50, null=True, blank=True)
