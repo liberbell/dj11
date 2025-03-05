@@ -149,5 +149,5 @@ def manage_shipping(request):
     
     try:
         shipping = ShippingAddress.objects.get(user=request.user.id)
-    except:
-        pass
+    except ShippingAddress.DoesNotExist:
+        shipping = None
