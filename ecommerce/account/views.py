@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import CreateUserForm, LoginForm, UpdateUserForm
 from payment.forms import ShippingForm
+from payment.models import ShippingAddress
 
 from django.contrib.sites.shortcuts import get_current_site
 from .token import user_tokenizer_generate
@@ -142,3 +143,7 @@ def delete_account(request):
         return redirect("store")
     
     return render(request, "account/delete_account.html")
+
+
+def manage_shipping():
+    pass
