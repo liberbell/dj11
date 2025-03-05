@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from .forms import CreateUserForm, LoginForm, UpdateUserForm
+from payment.forms import ShippingForm
+
 from django.contrib.sites.shortcuts import get_current_site
 from .token import user_tokenizer_generate
 from django.contrib.auth.models import User
 from django.contrib.auth.models import auth
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
 
 from django.contrib import messages
