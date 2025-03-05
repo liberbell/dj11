@@ -17,3 +17,7 @@ class ShippingAddress(models.Model):
     class Meta:
 
         verbose_name_plural = 'Shipping address'
+
+    def __str__(self):
+        return "sipping address - " + str(self.id)
+    
