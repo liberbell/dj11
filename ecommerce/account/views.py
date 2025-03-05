@@ -145,5 +145,9 @@ def delete_account(request):
     return render(request, "account/delete_account.html")
 
 
-def manage_shipping():
-    pass
+def manage_shipping(request):
+    
+    try:
+        shipping = ShippingAddress.objects.get(user=request.user.id)
+    except:
+        pass
