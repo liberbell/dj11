@@ -151,3 +151,5 @@ def manage_shipping(request):
         shipping = ShippingAddress.objects.get(user=request.user.id)
     except ShippingAddress.DoesNotExist:
         shipping = None
+
+    form = ShippingForm(instance=shipping)
