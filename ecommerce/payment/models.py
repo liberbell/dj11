@@ -13,3 +13,7 @@ class ShippingAddress(models.Model):
     zipcode = models.CharField(max_length=50, null=True, blank=True)
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+
+    class Meta:
+
+        verbose_name_plural = 'Shipping address'
