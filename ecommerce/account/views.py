@@ -155,3 +155,7 @@ def manage_shipping(request):
     form = ShippingForm(instance=shipping)
     if request.method == "POST":
         form = ShippingForm(request.POST, instance=shipping)
+        if form.is_valid():
+            shipping_user = form.save(commit=False)
+            shipping_user.user = request.user
+            
