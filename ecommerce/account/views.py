@@ -153,3 +153,5 @@ def manage_shipping(request):
         shipping = None
 
     form = ShippingForm(instance=shipping)
+    if request.method == "POST":
+        form = ShippingForm(request.POST, instance=shipping)
