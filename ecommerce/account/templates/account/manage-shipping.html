@@ -13,6 +13,7 @@
     <div class="container bg-white shadow-md p-5 form-layout">
         <h3>Manage Shipping</h3>
         <hr>
+        <p>Please fill in your shipping address</p>
         <br>
         <form action="" method="POST" autocomplete="off">
             {% csrf_token %}
@@ -30,6 +31,7 @@
             <br>
             {{ form.zipcode | as_crispy_form }}
             <br>
+            <button type="submit" class="btn btn-primary navbar-btn text-white w-100"> &nbsp; Update Shipping address </button>
         </form>
 
     </div>
