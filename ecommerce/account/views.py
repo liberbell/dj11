@@ -158,4 +158,6 @@ def manage_shipping(request):
         if form.is_valid():
             shipping_user = form.save(commit=False)
             shipping_user.user = request.user
+
+            shipping_user.save()
             
