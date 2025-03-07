@@ -144,7 +144,7 @@ def delete_account(request):
     
     return render(request, "account/delete_account.html")
 
-
+@login_required(login_url="my-login")
 def manage_shipping(request):
     
     try:
@@ -163,4 +163,4 @@ def manage_shipping(request):
             return redirect("dashboard")
         
     context = {'form': form}
-    return render(request, "account/manage_shipping.html")
+    return render(request, "account/manage-shipping.html", context=context)
