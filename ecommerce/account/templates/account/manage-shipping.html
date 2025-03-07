@@ -17,19 +17,19 @@
         <br>
         <form action="" method="POST" autocomplete="off">
             {% csrf_token %}
-            {{ form.full_name | as_crispy_form }}
+            {{ form.full_name | as_crispy_field }}
             <br>
-            {{ form.email | as_crispy_form }}
+            {{ form.email | as_crispy_field }}
             <br>
-            {{ form.address1 | as_crispy_form }}
+            {{ form.address1 | as_crispy_field }}
             <br>
-            {{ form.address2 | as_crispy_form }}
+            {{ form.address2 | as_crispy_field }}
             <br>
-            {{ form.city | as_crispy_form }}
+            {{ form.city | as_crispy_field }}
             <br>
-            {{ form.state | as_crispy_form }}
+            {{ form.state | as_crispy_field }}
             <br>
-            {{ form.zipcode | as_crispy_form }}
+            {{ form.zipcode | as_crispy_field }}
             <br>
             <button type="submit" class="btn btn-primary navbar-btn text-white w-100"> &nbsp; Update Shipping address </button>
         </form>
