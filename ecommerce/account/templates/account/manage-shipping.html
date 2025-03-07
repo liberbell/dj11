@@ -18,6 +18,8 @@
             {% csrf_token %}
             {{ form.full_name | as_crispy_form }}
             <br>
+            {{ form.email | as_crispy_form }}
+            <br>
         </form>
 
     </div>
