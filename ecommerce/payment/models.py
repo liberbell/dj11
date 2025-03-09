@@ -34,7 +34,7 @@ class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return "order - #" + str(self.id)
+        return "Order - #" + str(self.id)
     
 class OrderItem(models.Model):
 
@@ -45,3 +45,6 @@ class OrderItem(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return "Order Item - #" + str(self.id)
