@@ -9,9 +9,11 @@ def checkout(request):
         try:
             shipping_address = ShippingAddress.objects.get(user=request.user.id)
             context = {"shipping": shipping_address}
+            print("into try")
 
             return render(request, "payment/checkout.html", context=context)
         except:
+            print("except try")
             return render(request, "payment/checkout.html")
         
     return render(request, "payment/checkout.html")
