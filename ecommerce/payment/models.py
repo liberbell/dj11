@@ -28,3 +28,4 @@ class Order(models.Model):
     full_name = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
     shipping_address = models.TextField(max_length=1000)
+    amount_paid = models.DecimalField(max_digits=8, decimal_places=2)
