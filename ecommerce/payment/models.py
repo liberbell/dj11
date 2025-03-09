@@ -35,3 +35,7 @@ class Order(models.Model):
 
     def __str__(self):
         return "order - #" + str(self.id)
+    
+class OrderItem(models.Model):
+    quantity = models.PositiveIntegerField(default=1)
+    price = models.DecimalField(max_digits=8, decimal_places=2)
