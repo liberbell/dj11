@@ -11,6 +11,9 @@ def checkout(request):
             context = {"shipping": shipping_address}
 
             return render(request, "payment/checkout.html", context=context)
+        except:
+            return render(request, "payment/checkout.html")
+        
     return render(request, "payment/checkout.html")
 
 def payment_success(request):
