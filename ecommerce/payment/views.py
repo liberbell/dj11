@@ -8,6 +8,9 @@ def checkout(request):
     if request.user.is_authenticated:
         try:
             shipping_address = ShippingAddress.objects.get(user=request.user.id)
+            context = {"shipping": shipping_address}
+
+            return render(request, "payment/checkout.html", context=context)
     return render(request, "payment/checkout.html")
 
 def payment_success(request):
