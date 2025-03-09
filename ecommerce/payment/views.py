@@ -15,8 +15,8 @@ def checkout(request):
         except:
             print("except try")
             return render(request, "payment/checkout.html")
-        
-    return render(request, "payment/checkout.html")
+    else:
+        return render(request, "payment/checkout.html")
 
 def payment_success(request):
 
