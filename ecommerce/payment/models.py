@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from store.models import Product
 
 
 # Create your models here.
@@ -21,3 +22,9 @@ class ShippingAddress(models.Model):
     def __str__(self):
         return "sipping address - " + str(self.id)
     
+
+class Order(models.Model):
+
+    full_name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    shipping_address = models.TextField(max_length=1000)
