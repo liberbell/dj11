@@ -63,16 +63,21 @@
         e.preventDefault();
         $.ajax({
             type: 'POST',
-            url: '{% url "cart-add" %}',
+            url: '{% url "complete-order" %}',
             data: {
-                product_id: $('#add-button').val(),
-                product_quantity: $('#select option:selected').text(),
+                name: $('#name').val(),
+                email: $('#email').val(),
+                address1: $('#address1').val(),
+                address2: $('#address2').val(),
+                city: $('#city').val(),
+                state: $('#stete').val(),
+                zipcode: $('#zipcode').val(),
+
                 csrfmiddlewaretoken: "{{ csrf_token }}",
                 action: 'post',
             },
             success: function(json) {
-                console.log(json)
-                document.getElementById('cart-qty').textContent = json.qty
+                
                 
             },
             error: function(xhr, errmsg, err) {
