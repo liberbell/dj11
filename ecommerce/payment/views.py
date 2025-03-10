@@ -20,7 +20,9 @@ def checkout(request):
     
 def complete_order(request):
 
-    pass
+    if request.POST.get("action") == "post":
+        name = request.POST.get("name")
+        email = request.POST.get('email')
 
 def payment_success(request):
 
