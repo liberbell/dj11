@@ -59,7 +59,7 @@
     <br>
 </body>
 <script>
-    $(document).on('click', '#add-button', function(e) {
+    $(document).on('submit', function(e) {
         e.preventDefault();
         $.ajax({
             type: 'POST',
