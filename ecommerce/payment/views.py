@@ -41,7 +41,7 @@ def complete_order(request):
             order_id = order.pk
 
             for item in cart:
-                OrderItem.objects.create(order_id=order_id)
+                OrderItem.objects.create(order_id=order_id, product=item["product"], quantity=item["qty"], price=item["price"], user=request.user)
 
 def payment_success(request):
 
