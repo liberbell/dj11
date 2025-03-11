@@ -33,6 +33,12 @@ def complete_order(request):
 
         shipping_address = (address1 + "\n" +  address2 + "\n" + city + "\n" + state + "\n" + zipcode)
 
+        cart = Cart(request)
+        total_cost = cart.get_total()
+
+        if request.user.is_authenticated:
+            order = Order.objects.create(full_name=name)
+
 def payment_success(request):
 
     return render(request, "payment/payment_success.html")
