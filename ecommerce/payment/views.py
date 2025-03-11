@@ -30,6 +30,8 @@ def complete_order(request):
         state = request.POST.get("state")
         zipcode = request.POST.get("zipcode")
 
+        shipping_address = (address1 + "\n" +  address2 + "\n" + city + "\n" + state + "\n" + zipcode)
+
 def payment_success(request):
 
     return render(request, "payment/payment_success.html")
