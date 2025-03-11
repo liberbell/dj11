@@ -38,6 +38,10 @@ def complete_order(request):
 
         if request.user.is_authenticated:
             order = Order.objects.create(full_name=name, email=email, shipping_address=shipping_address, amount_paid=total_cost, user=request.user)
+            order_id = order.pk
+
+            for item in cart:
+                OrderItem.objects.create(order_id=order_id)
 
 def payment_success(request):
 
