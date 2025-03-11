@@ -37,7 +37,7 @@ def complete_order(request):
         total_cost = cart.get_total()
 
         if request.user.is_authenticated:
-            order = Order.objects.create(full_name=name)
+            order = Order.objects.create(full_name=name, email=email, shipping_address=shipping_address, amount_paid=total_cost)
 
 def payment_success(request):
 
