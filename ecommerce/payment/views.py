@@ -22,7 +22,13 @@ def complete_order(request):
 
     if request.POST.get("action") == "post":
         name = request.POST.get("name")
-        the_email = request.POST.get('email')
+        email = request.POST.get('the_email')
+        address1 = request.POST.get("address1")
+        address2 = request.POST.get("address2")
+        city = request.POST.get("city")
+
+        state = request.POST.get("state")
+        zipcode = request.POST.get("zipcode")
 
 def payment_success(request):
 
