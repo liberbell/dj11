@@ -81,7 +81,7 @@
                 
             },
             error: function(xhr, errmsg, err) {
-                window.location.replace("{% url 'payment-failed %}");
+                window.location.replace("{% url 'payment-failed' %}");
             },
         });
     })
