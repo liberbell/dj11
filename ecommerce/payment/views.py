@@ -33,7 +33,7 @@ def complete_order(request):
         state = request.POST.get("state")
         zipcode = request.POST.get("zipcode")
 
-        shipping_address = (address1 + "\n" + address2 + "\n" + city + "\n" + str(state) + "\n" + zipcode)
+        shipping_address = (address1 + "\n" + address2 + "\n" + city + "\n" + state + "\n" + zipcode)
 
         cart = Cart(request)
         total_cost = cart.get_total()
