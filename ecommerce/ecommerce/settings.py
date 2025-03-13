@@ -146,3 +146,5 @@ EMAIL_USE_TLS = 'True'
 
 EMAIL_HOST_USER = 'libersample67@gmail.com'
 EMAIL_HOST_PASSWORD = 'thisispass'
+
+SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
