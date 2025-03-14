@@ -78,7 +78,9 @@
                     var order_verified = "yes";
                     function checkInputs() {
                         $(':input[required]').each(function(){
-                            if()
+                            if($(this).val() == ''){
+                                return order_verified = "No";
+                            }
                         })
                     }
                 })
