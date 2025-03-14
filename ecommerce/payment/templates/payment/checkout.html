@@ -84,6 +84,12 @@
                         });
                         return order_verified;
                     }
+                    var isOrderVerified = checkInputs()
+                    if(isOrderVerified === 'Yes')
+                    {
+                        action.enable();
+                    }
+
                 });
             });
         },
