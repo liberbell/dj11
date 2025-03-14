@@ -72,6 +72,12 @@
 
         onInit: function(data, action) {
             actions.disable();
+
+            document.querySelectorAll('.validate').forEach(item => {
+                item.addEventListener('keyup', event => {
+                    
+                })
+            })
         },
 
         createOrder: (data, actions) => {
