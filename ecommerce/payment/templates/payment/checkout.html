@@ -70,12 +70,12 @@
           layout: "vertical"
         },
 
-        onInit: function(data, action) {
+        onInit: function(data, actions) {
             actions.disable();
 
             document.querySelectorAll('.validate').forEach(item => {
                 item.addEventListener('keyup', event => {
-                    var order_verified = "yes";
+                    var order_verified = "Yes";
                     function checkInputs() {
                         $(':input[required]').each(function(){
                             if($(this).val() == ''){
@@ -87,9 +87,12 @@
                     var isOrderVerified = checkInputs()
                     if(isOrderVerified === 'Yes')
                     {
-                        action.enable();
+                        actions.enable();
                     }
-
+                    else
+                    {
+                        actions.disable();
+                    }
                 });
             });
         },
