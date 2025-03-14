@@ -63,6 +63,8 @@
     <br>
 </body>
 <script>
+    var total_price = "{{ cart.get_total }}";
+
     const paypalButtonsComponent = paypal.Buttons({
         style: {
           color: "blue",
@@ -103,7 +105,7 @@
                 purchase_units: [
                     {
                         amount: {
-                            value: "88.44"
+                            value: total_price
                         }
                     }
                 ]
