@@ -81,10 +81,11 @@
                             if($(this).val() == ''){
                                 return order_verified = "No";
                             }
-                        })
+                        });
+                        return order_verified;
                     }
-                })
-            })
+                });
+            });
         },
 
         createOrder: (data, actions) => {
