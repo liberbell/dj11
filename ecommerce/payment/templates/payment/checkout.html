@@ -52,8 +52,8 @@
                 </div>    
             </div>
             <br>
-            <button id="complete-order" type="submit" class="btn btn-primary navbar-btn text-white"> &nbsp; Complete order </button>
-            <br><br>
+            {% comment %} <button id="complete-order" type="submit" class="btn btn-primary navbar-btn text-white"> &nbsp; Complete order </button>
+            <br><br> {% endcomment %}
 
             <div id="paypal-button-container"></div>
             <script src="https://www.paypal.com/sdk/js?client-id=Achp6jTUYGsux2gu8xprOqE0gGo9TwyQ5eFJuWH0vzuw30r53uez_xq0ivNDrJllAZA9JuXG3DC_me-3&currency=USD&intent=capture&enable-funding=venmo" data-sdk-integration-source="integrationbuilder"></script>
@@ -68,6 +68,10 @@
           color: "blue",
           shape: "rect",
           layout: "vertical"
+        },
+
+        onInit: function(data, action) {
+            actions.disable();
         },
 
         createOrder: (data, actions) => {
