@@ -11,7 +11,7 @@
 <body>
     <br>
     <div class="container bg-white shadow-md p-5" style="width:500px; border-radius:20px;">
-        <form id="form">
+        <form id="form" onsubmit="event.preventDefault">
             <div>
                 <h3> <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> &nbsp; Complete your order </h3>
                 <p> Please enter in the relevant information below. </p>
@@ -65,7 +65,7 @@
 <script>
     const paypalButtonsComponent = paypal.Buttons({
         style: {
-          color: "gold",
+          color: "blue",
           shape: "rect",
           layout: "vertical"
         },
