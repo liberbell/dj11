@@ -97,6 +97,25 @@
                     }
                 });
             });
+
+            var order_verified = "Yes";
+            function checkInputs() {
+                $(':input[required]').each(function(){
+                    if($(this).val() == ''){
+                        return order_verified = "No";
+                    }
+                });
+                return order_verified;
+            }
+            var isOrderVerified = checkInputs()
+            if(isOrderVerified === 'Yes')
+            {
+                actions.enable();
+            }
+            else
+            {
+                actions.disable();
+            }
         },
 
         createOrder: (data, actions) => {
