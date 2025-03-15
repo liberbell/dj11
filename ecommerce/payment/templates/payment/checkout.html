@@ -62,6 +62,8 @@
     </div>
     <br>
 </body>
+
+
 <script>
     var total_price = "{{ cart.get_total }}";
 
@@ -137,6 +139,31 @@
             const captureOrderHandler = (details) => {
                 const payerName = details.payer.name.given_name;
                 console.log('Transaction completed');
+
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url "complete-order" %}',
+                    data: {
+                        name: $('#name').val(),
+                        the_email: $('#email').val(),
+                        address1: $('#address1').val(),
+                        address2: $('#address2').val(),
+                        city: $('#city').val(),
+                        state: $('#state').val(),
+                        zipcode: $('#zipcode').val(),
+
+                        csrfmiddlewaretoken: "{{ csrf_token }}",
+                        action: 'post',
+                    },
+                    success: function(json) {
+                        window.location.replace("{% url 'payment-success' %}");
+                        
+                    },
+                    error: function(xhr, errmsg, err) {
+                        window.location.replace("{% url 'payment-failed' %}");
+                    },
+                });
+
 
 
             };
