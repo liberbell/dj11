@@ -188,7 +188,7 @@
 
     $(document).on('submit', function(e){
         e.preventDefault();
-        $.ajax {
+        $.ajax ({
             type: "POST",
             url: "{% url 'complete-order' %}",
             data: {
@@ -203,7 +203,12 @@
                 zipcode: $("#zipcode").val(),
 
                 csrfmiddlewaretoken: "{{ csrf_token }}",
-            }
+                action: "post"
+            },
+
+            success: function(json) {
+                window.location.replace("{% url 'payment-success' %}");
+            },
             
         }
 ;    })
