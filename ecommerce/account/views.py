@@ -164,3 +164,7 @@ def manage_shipping(request):
         
     context = {'form': form}
     return render(request, "account/manage-shipping.html", context=context)
+
+def track_orders(request):
+
+    pass
