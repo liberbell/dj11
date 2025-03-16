@@ -174,6 +174,7 @@ def track_orders(request):
         return render(request, "account/track_order.html", context=context)
 
     except:
-        pass
+        return render(request, "account/track_order.html", context=context)
 
+    return render(request, "account/track_order.html")
     
