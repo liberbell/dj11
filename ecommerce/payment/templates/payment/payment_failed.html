@@ -2,7 +2,21 @@
 {% load static %}
 
 {% block content %}
+<style>
+    body {
+        background-color: gray;
+    }
+</style>
+
 <body>
-    <h1> Payment failed </h1>
+    <br>
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <div class="text-center">
+            <i class="text-danger far fa-credit-card fa-lg"></i>
+            <h4><strong>Payment failed</strong></h4>
+            <hr>
+            <p>Your order was processed failed</p>
+        </div>
+    </div>
 </body>
 {% endblock content %}
