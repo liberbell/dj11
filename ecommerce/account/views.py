@@ -167,4 +167,4 @@ def manage_shipping(request):
 
 def track_orders(request):
 
-    pass
+    return render(request, "account/track_order.html")
