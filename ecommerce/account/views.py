@@ -168,9 +168,12 @@ def manage_shipping(request):
 @login_required(login_url="my-login")
 def track_orders(request):
     try:
-        orders = OrderItem.objects.filter()
+        orders = OrderItem.objects.filter(user=request.user)
+        context = {"orders": orders}
+
+        return render(request, "account/track_order.html", context=context)
 
     except:
         pass
+
     
-    return render(request, "account/track_order.html")
