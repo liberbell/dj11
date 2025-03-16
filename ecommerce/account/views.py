@@ -168,6 +168,9 @@ def manage_shipping(request):
 @login_required(login_url="my-login")
 def track_orders(request):
     try:
+        orders = OrderItem.objects.filter()
 
-
+    except:
+        pass
+    
     return render(request, "account/track_order.html")
