@@ -21,7 +21,10 @@
             <strong> Order ID# {{ order.id }}</strong>
             <br>
             {{ order.product }}
+            <br>
             Quantity: {{ order.quantity }}
+            <br>
+            Price: ${{ order.price }}
         
         {% endfor %}
         <hr>
