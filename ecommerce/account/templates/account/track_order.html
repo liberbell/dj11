@@ -19,7 +19,7 @@
     <br>
     <div class="container bg-white shadow-md p-5 form-layout">
         {% for order in orders %}
-            <strong> Order ID# {{ order.id }}</strong>
+            <strong><i class="fas fa-list fa" aria-hidden="true"></i> &nbsp; Order ID# {{ order.id }}</strong>
             <br>
             {{ order.product }}
             <br>
